@@ -156,6 +156,42 @@
       margin-top: 0px;
     }
 
+    #ProjectsBtn {
+      background-color: #ffffff0d;
+      color: white;
+      border-radius: 20px;
+      font-size: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border: 1px solid #ffffff23;
+      cursor: pointer;
+    }
+
+    #SkillsBtn {
+      background-color: #ffffff0d;
+      color: white;
+      border-radius: 20px;
+      font-size: 20px;
+      padding-left: 12px;
+      padding-right: 12px;
+      border: 1px solid #ffffff23;
+      cursor: pointer;
+    }
+
+    .SwitchButtons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    #Selector {
+      background-color: #ffffff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
     #SkillsSeparator {
       background-color: #2D2D2D;
       height: 2px;
@@ -190,22 +226,24 @@
     }
 
     .SkillsContainer {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(2, auto);
       align-self: center;
       align-items: center;
       justify-content: center;
       align-content: center;
+      margin-top: 50px;
       gap: 15px;
     }
 
     .ProjectsContainer {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(2, auto);
       align-self: center;
       align-items: center;
       justify-content: center;
       align-content: center;
+      margin-top: 50px;
       gap: 15px;
     }
 
@@ -326,6 +364,46 @@
       align-self:flex-end;
     }
 
+    .D3EngineSkill {
+      display: flex;
+      background-color: #1b1b1650; 
+      border: 1px solid; 
+      border-radius: 10px; 
+      border-color: #35333375; 
+      backdrop-filter: blur(50px); 
+      width: 225px; 
+      height: 50px;
+    }
+
+    .D3EngineSkill a {
+        text-decoration: none; 
+        font-family: 'San Francisco'; 
+        color: #ffffff50; 
+        margin-left: 10px; 
+        align-self:center; 
+        font-size: 12px;
+      }
+
+    .SinglecraftSkill {
+      display: flex; 
+      background-color: #1b1b1650; 
+      border: 1px solid; 
+      border-radius: 10px; 
+      border-color: #35333375; 
+      backdrop-filter: blur(50px); 
+      width: 225px; 
+      height: 50px;
+    }
+
+    .SinglecraftSkill a {
+        text-decoration: none; 
+        font-family: 'San Francisco'; 
+        color: #ffffff50; 
+        margin-left: 10px; 
+        align-self:center; 
+        font-size: 12px;
+      }
+
     @media (max-width: 500px) {
       #Username {
         font-size: 3em;
@@ -340,13 +418,143 @@
         font-size: 10px;
         color: #5C5C5C;
       }
-      .SkillsContainer {
+      .PythonSkill {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        gap: 10px;
+        background-color: #1b1b1650;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: #35333375;
+        backdrop-filter: blur(50px);
+        font-size: 0.7em;
+        width: 115px;
+        height: 30px;
+      }
+
+      .JavaSkill {
+        display: flex;
+        background-color: #1b1b1650;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: #35333375;
+        backdrop-filter: blur(50px);
+        font-size: 0.7em;
+        width: 115px;
+        height: 30px;
+      }
+
+      .JavaScriptSkill {
+        display: flex;
+        background-color: #1b1b1650;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: #35333375;
+        backdrop-filter: blur(50px);
+        font-size: 0.7em;
+        width: 115px;
+        height: 30px;
+      }
+
+      #JavaSkillImage {
+        user-select: none;
+        -webkit-user-select: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        font-size: 0.7em;
+        align-self: flex-end;
+        filter: saturate(0.0%);
+        width: 25px;
+        height: 25px;
+        transition: filter 0.3s ease-in-out;
+      }
+
+      #JavaScriptSkillImage {
+        user-select: none;
+        -webkit-user-select: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        align-self: flex-end;
+        filter: saturate(0.0%);
+        transition: filter 0.3s ease-in-out;
+      }
+
+      #PythonSkillImage {
+        user-select: none;
+        -webkit-user-select: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        align-self: flex-end;
+        filter: saturate(0.0%);
+        transition: filter 0.3s ease-in-out;
+      }
+
+      .SinglecraftSkill {
+        display: flex;
+        background-color: #1b1b1650;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: #35333375;
+        backdrop-filter: blur(50px);
+        font-size: 0.4em;
+        width: 115px;
+        height: 30px;
+      }
+
+      .SinglecraftSkill a {
+        text-decoration: none; 
+        font-family: 'San Francisco'; 
+        color: #ffffff50; 
+        margin-left: 10px; 
+        align-self:center; 
+        font-size: 8px;
+      }
+
+      .D3EngineSkill {
+        display: flex;
+        background-color: #1b1b1650;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: #35333375;
+        backdrop-filter: blur(50px);
+        font-size: 0.4em;
+        width: 115px;
+        height: 30px;
+      }
+
+      .D3EngineSkill a {
+        text-decoration: none; 
+        font-family: 'San Francisco'; 
+        color: #ffffff50; 
+        margin-left: 10px; 
+        align-self:center; 
+        font-size: 8px;
+      }
+
+      #D3EngineSkillImage {
+        user-select: none;
+        -webkit-user-select: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        align-self: flex-end;
+        filter: saturate(0.0%);
+        transition: filter 0.3s ease-in-out;
+      }
+
+      #SinglecraftSkillImage {
+        user-select: none;
+        -webkit-user-select: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        align-self: flex-end;
+        filter: saturate(0.0%);
+        transition: filter 0.3s ease-in-out;
       }
     }
 
@@ -371,46 +579,83 @@
       <h1 id="Username" content="nosnippet">Lucachinou</h1>
       <p id="MoreInfos" content="nosnippet">Luca <span style="user-select: none; -webkit-user-select: none;">•</span content="nosnippet" style="display: flex;"> 16 ans</p>
     </div>
-    <div class="Skills">
-      <div class="separator">
-        <p id="SkillsLabel">Competences</p>
-        <div id="SkillsSeparator"></div>
+
+    <div class="CategorySelector">
+      <div class="SwitchButtons">
+        <button id="SkillsBtn">Skills</button>
+        <button id="ProjectsBtn">Projects</button>
       </div>
+      <div id="Selector"> </div>
+    </div>
+
+    <div class="Skills">
       <div class="SkillsContainer">
         <div class="PythonSkill">
           <img id="PythonSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false">
           <p id="PythonSkillSentence">IA - Bot</p>
-          <!--<div id="PythonSkill-Separator"></div>-->
         </div>
         <div class="JavaSkill">
           <img id="JavaSkillImage" src="src/assets/Java.png" alt="Java" width="40" height="40" draggable="false">
           <p id="JavaSkillSentence">Minecraft</p>
-          <!--<div id="PythonSkill-Separator"></div>-->
         </div>
         <div class="JavaScriptSkill">
           <img id="JavaScriptSkillImage" src="src/assets/JavaScript.png" alt="JavaScript" width="40" height="40" draggable="false">
           <p id="JavaScriptSkillSentence">Bot</p>
-          <!--<div id="PythonSkill-Separator"></div>-->
         </div>
       </div>
     </div>
 
     <div class="Projects">
-      <div class="separator">
-        <p id="ProjectsLabel">Projects</p>
-        <div id="ProjectsSeparator"></div>
-      </div>
       <div class="ProjectsContainer">
-        <div class="3DEngineSkill" style="display: flex; background-color: #1b1b1650; border: 1px solid; border-radius: 10px; border-color: #35333375; backdrop-filter: blur(50px); width: 225px; height: 50px;">
-          <img id="3DEngineSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
-          <a id="3DEngineProjectSentence" href="https://github.com/Lucachinou/3dEngine" target="_blank" style="text-decoration: none; font-family: 'San Francisco'; color: #ffffff50; margin-left: 10px; align-self:center; font-size: 12px;">An open-source OpenGL 3D engine</a>
+        <div class="D3EngineSkill">
+          <img id="D3EngineSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
+          <a id="D3EngineProjectSentence" href="https://github.com/Lucachinou/3dEngine" target="_blank">An open-source OpenGL 3D engine</a>
         </div>
 
-        <div class="3DEngineSkill" style="display: flex; background-color: #1b1b1650; border: 1px solid; border-radius: 10px; border-color: #35333375; backdrop-filter: blur(50px); width: 225px; height: 50px;">
-          <img id="3DEngineSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
-          <a id="3DEngineProjectSentence" href="https://github.com/Lucachinou/Singlecraft" target="_blank" style="text-decoration: none; font-family: 'San Francisco'; color: #ffffff50; margin-left: 10px; align-self:center; font-size: 12px;">An open-source Minecraft server management</a>
+        <div class="SinglecraftSkill">
+          <img id="SinglecraftSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
+          <a id="SinglecraftProjectSentence" href="https://github.com/Lucachinou/Singlecraft" target="_blank">An open-source Minecraft server management</a>
         </div>
       </div>
     </div>
+
+    <script>
+      const Selector = document.getElementById("Selector");
+      const SkillsButton = document.getElementById("SkillsBtn");
+      const ProjectsButton = document.getElementById("ProjectsBtn");
+
+      let SkillsSection = document.getElementsByClassName("SkillsContainer")[0];
+      let ProjectsSection = document.getElementsByClassName("ProjectsContainer")[0];
+
+      let CurrentSelected = SkillsButton;
+
+      SkillsSection.style.display = 'grid'
+
+      SkillsButton.addEventListener('click', () => {
+        CurrentSelected = SkillsButton;
+        SkillsSection.style.display = 'grid'
+        ProjectsSection.style.display = 'none'
+        ComputeSelectorPosition();
+      });
+
+      ProjectsButton.addEventListener('click', () => {
+        CurrentSelected = ProjectsButton;
+        SkillsSection.style.display = 'none'
+        ProjectsSection.style.display = 'grid'
+        ComputeSelectorPosition();
+      });
+      
+      function ComputeSelectorPosition() {
+        const bound = CurrentSelected.getBoundingClientRect();
+      
+        Selector.style.position = 'absolute';
+        Selector.style.left = (bound.left + bound.width / 2 - 5) + "px";
+        Selector.style.top = (bound.top + window.scrollY - Selector.offsetHeight + 55) + "px";
+      }
+      ComputeSelectorPosition();
+
+      window.addEventListener('resize', ComputeSelectorPosition);
+      window.addEventListener('scroll', ComputeSelectorPosition);
+    </script>
   </body>
 </html>
