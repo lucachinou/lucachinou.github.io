@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <p>Please wait..</p>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const referrer = params.get("source")
+
+    if (referrer == null) {
+        window.location.href = "https://discord.gg/W8sQKB8nWW"
+    } else if ("github.com" in referrer) {
+        window.location.href = "https://discord.gg/G8q8cGyX42"
+    } else if ("youtube.com" in referrer) {
+        window.location.href = "https://discord.gg/p2jcWEvjsP"
+    } else {
+        window.location.href = "https://discord.gg/VwqDj4apnj"
+    }
+</script>
+</body>
+</html>
