@@ -13,9 +13,9 @@
 
     if (referrer == null) {
         window.location.href = "https://discord.gg/W8sQKB8nWW"
-    } else if ("github.com" in referrer || "lucachinou.github.io" in referrer) {
+    } else if (referrer === "github.com" || referrer === "lucachinou.github.io") {
         window.location.href = "https://discord.gg/G8q8cGyX42"
-    } else if ("youtube.com" in referrer) {
+    } else if (referrer === "youtube.com") {
         window.location.href = "https://discord.gg/p2jcWEvjsP"
     } else {
         window.location.href = "https://discord.gg/VwqDj4apnj"
