@@ -2,659 +2,594 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/Memojis.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Lucachinou | Portfolio" />
-    <meta property="og:description" content="Obtenez plus d'informations sur moi !">
-    <meta name="description" content="Je suis Lucachinou, j'ai 16 ans, et je peux coder en python, Java et plein d'autre languages!">
-    <link rel="preload" href="/src/assets/Fonts/SF-Pro.a1b2c3.ttf" as="font" type="font/truetype" crossorigin="anonymous">
-    <link rel="preconnect" href="https://lucachinou.github.io">
-    <meta name="google-site-verification" content="jsSScERVs1E4VF_b_JCoEQKKKXF7sIH5IXGDQ6O-h3M" />
+    <meta name="theme-color" content="#08080a" />
+    <link rel="icon" type="image/svg+xml" href="src/assets/Memojis.svg" />
+
     <title>Lucachinou</title>
+    <meta name="description" content="Je suis Lucachinou, j'ai 16 ans, et je peux coder en python, Java et plein d'autre languages!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lucachinou | Portfolio" />
+    <meta property="og:description" content="Obtenez plus d'informations sur moi, tel que mes projets open-source et compètences." />
+    <meta property="og:image" content="https://lucachinou.github.io/src/assets/Memojis.svg" />
+    <meta property="og:url" content="https://lucachinou.github.io" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="google-site-verification" content="jsSScERVs1E4VF_b_JCoEQKKKXF7sIH5IXGDQ6O-h3M" />
+    <link rel="canonical" href="https://lucachinou.github.io/" />
+
+    <link rel="preconnect" href="https://lucachinou.github.io" />
+    <link rel="preload" href="src/assets/Fonts/SF-Pro-Display-Regular.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    <link rel="preload" href="src/assets/Fonts/SF-Pro-Display-Semibold.otf" as="font" type="font/otf" crossorigin="anonymous" />
 
     <style>
-
-    @font-face {
-        font-family: 'San Francisco';
-        src: url('src/assets/Fonts/SF-Pro.a1b2c3.ttf') format('truetype'),
-            url('src/assets/Fonts/SF-Pro-Text-Bold.otf') format('opentype');
-        font-weight: bold;
+      /* ---------- Typographie ---------- */
+      @font-face {
+        font-family: 'SF Pro';
+        src: url('src/assets/Fonts/SF-Pro-Display-Regular.otf') format('opentype');
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
-    }
-
-    @keyframes MoveGithub {
-      0% {
-        transform: translate(-0%, -0%)
-      } 100% {
-        transform: translate(-10%, -5%)
       }
-    }
-
-    @keyframes MoveDiscord {
-      0% {
-        transform: translate(-0%, -0%)
-      } 100% {
-        transform: translate(-5%, 3%)
+      @font-face {
+        font-family: 'SF Pro';
+        src: url('src/assets/Fonts/SF-Pro-Display-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
       }
-    }
-
-    @keyframes MoveYouTube {
-      0% {
-        transform: translate(-0%, -0%)
-      } 100% {
-        transform: translate(-3%, -4%)
-      }
-    }
-
-    @keyframes MoveTwitch {
-      0% {
-        transform: translate(-0%, -0%)
-      } 100% {
-        transform: translate(-3%, 2%)
-      }
-    }
-
-    body {
-      background: radial-gradient(circle at center, #111111 0%, #000000 50%, #000000 100%);
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    .SocialCloud {
-      display: flex;
-      margin-top: 75px;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-
-    #Github {
-      position: absolute;
-      top: 20px;
-      margin-right: 145px;
-      border-radius: 80px;
-      user-select: none;
-      animation: MoveGithub 5s infinite alternate ease;
-    }
-
-    #Github img {
-      user-select: none;
-      border-radius: 80px;
-    }
-
-    #Discord {
-      position: absolute;
-      top: 150px;
-      margin-right: 165px;
-      border-radius: 80px;
-      user-select: none;
-      animation: MoveDiscord 3.5s infinite alternate ease;
-    }
-
-    #Discord img {
-      user-select: none;
-      border-radius: 80px;
-    }
-
-    #Youtube {
-      position: absolute;
-      top: 190px;
-      margin-left: 100px;
-      border-radius: 80px;
-      user-select: none;
-      animation: MoveYouTube 4.5s infinite alternate ease
-    }
-
-    #YouTube img {
-      border-radius: 80px;
-      user-select: none;
-    }
-
-    #Twitch {
-      position: absolute;
-      top: 45px;
-      margin-left: 180px;
-      border-radius: 80px;
-      user-select: none;
-      animation: MoveTwitch 5.5s infinite alternate ease
-    }
-
-    #Twitch img {
-      border-radius: 80px;
-      user-select: none;
-    }
-
-    #Memojis {
-      user-select: none;
-    }
-
-    .Presentation {
-      display: flex;
-      flex-direction: column;
-      margin-top: 45px;
-      align-items: center;
-      justify-content: center;
-      align-content: center;
-    }
-
-    #Username {
-      font-family: 'San Francisco';
-      font-weight: bold;
-      color: #FFFFFF;
-      font-size: 5em;
-      margin-bottom: 0px;
-      transition: font-size, 0.1s ease-in-out;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    #MoreInfos {
-      font-family: 'San Francisco'; 
-      color: #ffffff88;
-      margin-top: 0px;
-    }
-
-    #ProjectsBtn {
-      background-color: #ffffff0d;
-      color: white;
-      border-radius: 20px;
-      font-size: 20px;
-      padding-left: 5px;
-      padding-right: 5px;
-      border: 1px solid #ffffff23;
-      cursor: pointer;
-    }
-
-    #SkillsBtn {
-      background-color: #ffffff0d;
-      color: white;
-      border-radius: 20px;
-      font-size: 20px;
-      padding-left: 12px;
-      padding-right: 12px;
-      border: 1px solid #ffffff23;
-      cursor: pointer;
-    }
-
-    .SwitchButtons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    #Selector {
-      background-color: #ffffff;
-      width: 10px;
-      height: 10px;
-      border-radius: 50px;
-      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    #SkillsSeparator {
-      background-color: #2D2D2D;
-      height: 2px;
-      width: 300px;
-    }
-
-    #SkillsLabel {
-      font-family: 'San Francisco';
-      font-size: 15px;
-      color: #5C5C5C;
-    }
-
-    #ProjectsSeparator {
-      background-color: #2D2D2D;
-      height: 1px;
-      width: 360px;
-    }
-
-    #ProjectsLabel {
-      font-family: 'San Francisco';
-      font-size: 15px;
-      color: #5C5C5C;
-    }
-
-    .separator {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      margin-right: 50px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .SkillsContainer {
-      display: none;
-      grid-template-columns: repeat(2, auto);
-      align-self: center;
-      align-items: center;
-      justify-content: center;
-      align-content: center;
-      margin-top: 50px;
-      gap: 15px;
-    }
-
-    .ProjectsContainer {
-      display: none;
-      grid-template-columns: repeat(2, auto);
-      align-self: center;
-      align-items: center;
-      justify-content: center;
-      align-content: center;
-      margin-top: 50px;
-      gap: 15px;
-    }
-
-    .PythonSkill {
-      display: flex;
-      background-color: #1b1b1650;
-      border: 1px solid;
-      border-radius: 10px;
-      border-color: #35333375;
-      backdrop-filter: blur(50px);
-      width: 225px;
-      height: 50px;
-    }
-
-    .JavaSkill {
-      display: flex;
-      background-color: #1b1b1650;
-      border: 1px solid;
-      border-radius: 10px;
-      border-color: #35333375;
-      backdrop-filter: blur(50px);
-      width: 225px;
-      height: 50px;
-    }
-
-    .JavaScriptSkill {
-      display: flex;
-      background-color: #1b1b1650;
-      border: 1px solid;
-      border-radius: 10px;
-      border-color: #35333375;
-      backdrop-filter: blur(50px);
-      width: 225px;
-      height: 50px;
-    }
-
-    #JavaSkillImage {
-      user-select: none;
-      -webkit-user-select: none;
-      margin-bottom: 5px;
-      margin-left: 5px;
-      align-self: flex-end;
-      filter: saturate(0.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #JavaSkillImage:hover {
-      user-select: none;
-      -webkit-user-select: none;
-      align-self: flex-end;
-      filter: saturate(100.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #JavaScriptSkillImage {
-      user-select: none;
-      -webkit-user-select: none;
-      margin-bottom: 5px;
-      margin-left: 5px;
-      align-self: flex-end;
-      filter: saturate(0.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #JavaScriptSkillImage:hover {
-      user-select: none;
-      -webkit-user-select: none;
-      align-self: flex-end;
-      filter: saturate(100.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #PythonSkillImage {
-      user-select: none;
-      -webkit-user-select: none;
-      margin-bottom: 5px;
-      margin-left: 5px;
-      align-self: flex-end;
-      filter: saturate(0.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #PythonSkillImage:hover {
-      user-select: none;
-      -webkit-user-select: none;
-      align-self: flex-end;
-      filter: saturate(100.0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    #PythonSkill-Separator {
-      background-color: #2D2D2D;
-      height: 2px;
-      width: 150px;
-      align-self: flex-end;
-      margin-bottom: 30px;
-      margin-left: 10px;
-    }
-
-    #PythonSkillSentence {
-      font-family: 'San Francisco';
-      color: #ffffff50;
-      margin-left: 10px;
-      align-self:flex-end;
-    }
-
-    #JavaScriptSkillSentence {
-      font-family: 'San Francisco';
-      color: #ffffff50;
-      margin-left: 10px;
-      align-self:flex-end;
-    }
-
-    #JavaSkillSentence {
-      font-family: 'San Francisco';
-      color: #ffffff50;
-      margin-left: 10px;
-      align-self:flex-end;
-    }
-
-    .D3EngineSkill {
-      display: flex;
-      background-color: #1b1b1650; 
-      border: 1px solid; 
-      border-radius: 10px; 
-      border-color: #35333375; 
-      backdrop-filter: blur(50px); 
-      width: 225px; 
-      height: 50px;
-    }
-
-    .D3EngineSkill a {
-        text-decoration: none; 
-        font-family: 'San Francisco'; 
-        color: #ffffff50; 
-        margin-left: 10px; 
-        align-self:center; 
-        font-size: 12px;
+      @font-face {
+        font-family: 'SF Pro';
+        src: url('src/assets/Fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
       }
 
-    .SinglecraftSkill {
-      display: flex; 
-      background-color: #1b1b1650; 
-      border: 1px solid; 
-      border-radius: 10px; 
-      border-color: #35333375; 
-      backdrop-filter: blur(50px); 
-      width: 225px; 
-      height: 50px;
-    }
+      /* ---------- Design tokens ---------- */
+      :root {
+        --bg: #08080a;
+        --bg-glow: #17171c;
 
-    .SinglecraftSkill a {
-        text-decoration: none; 
-        font-family: 'San Francisco'; 
-        color: #ffffff50; 
-        margin-left: 10px; 
-        align-self:center; 
-        font-size: 12px;
+        --text: #f4f4f5;
+        --text-muted: #a1a1aa;
+        --text-faint: #71717a;
+
+        --surface: rgba(255, 255, 255, 0.026);
+        --surface-hover: rgba(255, 255, 255, 0.052);
+        --border: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.16);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-full: 999px;
+
+        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+        --speed: 0.25s;
+
+        --content-width: 720px;
       }
 
-    @media (max-width: 500px) {
-      #Username {
-        font-size: 3em;
+      /* ---------- Reset ---------- */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
       }
-      #SkillsSeparator {
-        background-color: #2D2D2D;
-        height: 2px;
-        width: 125px;
+
+      html {
+        -webkit-text-size-adjust: 100%;
       }
-      #SkillsLabel {
-        font-family: 'San Francisco';
-        font-size: 10px;
-        color: #5C5C5C;
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        background-color: var(--bg);
+        background-image: radial-gradient(120% 80% at 50% -10%, var(--bg-glow) 0%, transparent 60%);
+        background-repeat: no-repeat;
+        color: var(--text);
+        font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      .PythonSkill {
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--border-strong);
+        outline-offset: 3px;
+        border-radius: var(--radius-sm);
+      }
+
+      /* ---------- Layout ---------- */
+      .page {
+        width: 100%;
+        max-width: var(--content-width);
+        margin-inline: auto;
+        padding: clamp(56px, 12vh, 112px) 20px 64px;
         display: flex;
-        background-color: #1b1b1650;
-        border: 1px solid;
-        border-radius: 10px;
-        border-color: #35333375;
-        backdrop-filter: blur(50px);
-        font-size: 0.7em;
-        width: 115px;
-        height: 30px;
+        flex-direction: column;
+        gap: clamp(36px, 6vh, 56px);
       }
 
-      .JavaSkill {
+      /* ---------- En-tête ---------- */
+      .hero {
         display: flex;
-        background-color: #1b1b1650;
-        border: 1px solid;
-        border-radius: 10px;
-        border-color: #35333375;
-        backdrop-filter: blur(50px);
-        font-size: 0.7em;
-        width: 115px;
-        height: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
       }
 
-      .JavaScriptSkill {
+      .hero__avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 4px;
+        user-select: none;
+      }
+
+      .hero__name {
+        margin: 0;
+        font-size: clamp(2rem, 7vw, 2.75rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+
+      .hero__meta {
+        margin: 6px 0 0;
+        color: var(--text-muted);
+        font-size: 0.975rem;
+      }
+
+      .hero__meta .sep {
+        color: var(--text-faint);
+        margin-inline: 6px;
+        user-select: none;
+      }
+
+      .hero__bio {
+        margin: 0;
+        max-width: 52ch;
+        color: var(--text-muted);
+        font-size: 1rem;
+      }
+
+      .hero__bio strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      /* ---------- Liens sociaux ---------- */
+      .socials {
         display: flex;
-        background-color: #1b1b1650;
-        border: 1px solid;
-        border-radius: 10px;
-        border-color: #35333375;
-        backdrop-filter: blur(50px);
-        font-size: 0.7em;
-        width: 115px;
-        height: 30px;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
       }
 
-      #JavaSkillImage {
-        user-select: none;
-        -webkit-user-select: none;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        font-size: 0.7em;
-        align-self: flex-end;
-        filter: saturate(0.0%);
-        width: 25px;
-        height: 25px;
-        transition: filter 0.3s ease-in-out;
+      .social {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 13px 7px 10px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-full);
+        background: var(--surface);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease),
+          color var(--speed) var(--ease);
       }
 
-      #JavaScriptSkillImage {
-        user-select: none;
-        -webkit-user-select: none;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        width: 20px;
-        height: 20px;
-        align-self: flex-end;
-        filter: saturate(0.0%);
-        transition: filter 0.3s ease-in-out;
+      .social img {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        filter: grayscale(1);
+        opacity: 0.75;
+        transition: filter var(--speed) var(--ease), opacity var(--speed) var(--ease);
       }
 
-      #PythonSkillImage {
-        user-select: none;
-        -webkit-user-select: none;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        width: 20px;
-        height: 20px;
-        align-self: flex-end;
-        filter: saturate(0.0%);
-        transition: filter 0.3s ease-in-out;
+      .social:hover {
+        background: var(--surface-hover);
+        border-color: var(--border-strong);
+        color: var(--text);
       }
 
-      .SinglecraftSkill {
+      .social:hover img {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+
+      /* ---------- Onglets ---------- */
+      .tabs {
+        position: relative;
+        display: inline-flex;
+        align-self: flex-start;
+        gap: 2px;
+        padding: 4px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-full);
+        background: var(--surface);
+      }
+
+      .tabs__pill {
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 0;
+        width: 0;
+        border-radius: var(--radius-full);
+        background: rgba(255, 255, 255, 0.09);
+        transition: transform var(--speed) var(--ease), width var(--speed) var(--ease);
+        pointer-events: none;
+      }
+
+      .tab {
+        position: relative;
+        z-index: 1;
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: var(--text-faint);
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 7px 18px;
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        transition: color var(--speed) var(--ease);
+      }
+
+      .tab:hover {
+        color: var(--text-muted);
+      }
+
+      .tab[aria-selected='true'] {
+        color: var(--text);
+      }
+
+      /* ---------- Grilles & cartes ---------- */
+      .panel[hidden] {
+        display: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+        animation: fade-up 0.4s var(--ease) both;
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .card {
+        position: relative;
         display: flex;
-        background-color: #1b1b1650;
-        border: 1px solid;
-        border-radius: 10px;
-        border-color: #35333375;
-        backdrop-filter: blur(50px);
-        font-size: 0.4em;
-        width: 115px;
-        height: 30px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease),
+          transform var(--speed) var(--ease);
       }
 
-      .SinglecraftSkill a {
-        text-decoration: none; 
-        font-family: 'San Francisco'; 
-        color: #ffffff50; 
-        margin-left: 10px; 
-        align-self:center; 
-        font-size: 8px;
+      a.card:hover {
+        background: var(--surface-hover);
+        border-color: var(--border-strong);
+        transform: translateY(-2px);
       }
 
-      .D3EngineSkill {
+      .card__head {
         display: flex;
-        background-color: #1b1b1650;
-        border: 1px solid;
-        border-radius: 10px;
-        border-color: #35333375;
-        backdrop-filter: blur(50px);
-        font-size: 0.4em;
-        width: 115px;
-        height: 30px;
+        align-items: center;
+        gap: 10px;
       }
 
-      .D3EngineSkill a {
-        text-decoration: none; 
-        font-family: 'San Francisco'; 
-        color: #ffffff50; 
-        margin-left: 10px; 
-        align-self:center; 
-        font-size: 8px;
+      .card__icon {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        filter: grayscale(1);
+        opacity: 0.8;
+        transition: filter var(--speed) var(--ease), opacity var(--speed) var(--ease);
       }
 
-      #D3EngineSkillImage {
-        user-select: none;
-        -webkit-user-select: none;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        width: 20px;
-        height: 20px;
-        align-self: flex-end;
-        filter: saturate(0.0%);
-        transition: filter 0.3s ease-in-out;
+      .card:hover .card__icon {
+        filter: grayscale(0);
+        opacity: 1;
       }
 
-      #SinglecraftSkillImage {
-        user-select: none;
-        -webkit-user-select: none;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        width: 20px;
-        height: 20px;
-        align-self: flex-end;
-        filter: saturate(0.0%);
-        transition: filter 0.3s ease-in-out;
+      .card__title {
+        margin: 0;
+        font-size: 0.975rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
       }
-    }
 
-    @media (max-width: 299px) {
-      #Username {
-        font-size: 3em;
+      .card__desc {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        line-height: 1.5;
       }
-    }
-  </style>
+
+      .card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 2px;
+      }
+
+      .tag {
+        padding: 3px 9px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-full);
+        color: var(--text-faint);
+        font-size: 0.72rem;
+        letter-spacing: 0.01em;
+      }
+
+      .card__arrow {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 14px;
+        height: 14px;
+        color: var(--text-faint);
+        transition: transform var(--speed) var(--ease), color var(--speed) var(--ease);
+      }
+
+      a.card:hover .card__arrow {
+        color: var(--text);
+        transform: translate(2px, -2px);
+      }
+
+      /* ---------- Footer ---------- */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--text-faint);
+        font-size: 0.8rem;
+      }
+
+      .footer a:hover {
+        color: var(--text-muted);
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .hero__avatar {
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div class="SocialCloud">
-      <a id="Github" content="nosnippet" href="https://github.com/Lucachinou" target="_blank"><img src="src/assets/Github.svg" alt="Github" width="100" height="100" draggable="false"></a>
-      <a id="Twitch" content="nosnippet" href="https://www.twitch.tv/lucachinou" target="_blank"><img src="src/assets/Twitch.svg" alt="Twitch" width="100" height="100" draggable="false"></a>
-      <a id="Youtube" content="nosnippet" href="https://www.youtube.com/@lucachinou" target="_blank"><img src="src/assets/YouTube.svg" alt="Youtube" width="100" height="100" draggable="false"></a>
-      <img id="Memojis" content="nosnippet" fetchpriority=high src="src/assets/Memojis.svg" alt="Memojis" draggable="false" width="150" height="150">
-      <a id="Discord" content="nosnippet" href="https://discord.gg/G8q8cGyX42" target="_blank"><img src="src/assets/Discord.svg" alt="Discord" width="100" height="100" draggable="false"></a>
-    </div>
+    <main class="page">
+      <!-- En-tête -->
+      <header class="hero">
+        <img
+          class="hero__avatar"
+          src="src/assets/Memojis.svg"
+          alt="Avatar de Luca"
+          width="72"
+          height="72"
+          fetchpriority="high"
+          draggable="false"
+        />
 
-    <div class="Presentation">
-      <h1 id="Username" content="nosnippet">Lucachinou</h1>
-      <p id="MoreInfos" content="nosnippet">Luca <span style="user-select: none; -webkit-user-select: none;">•</span content="nosnippet" style="display: flex;"> 16 ans</p>
-    </div>
-
-    <div class="CategorySelector">
-      <div class="SwitchButtons">
-        <button id="SkillsBtn">Skills</button>
-        <button id="ProjectsBtn">Projects</button>
-      </div>
-      <div id="Selector"> </div>
-    </div>
-
-    <div class="Skills">
-      <div class="SkillsContainer">
-        <div class="PythonSkill">
-          <img id="PythonSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false">
-          <p id="PythonSkillSentence">IA - Bot</p>
-        </div>
-        <div class="JavaSkill">
-          <img id="JavaSkillImage" src="src/assets/Java.png" alt="Java" width="40" height="40" draggable="false">
-          <p id="JavaSkillSentence">Minecraft</p>
-        </div>
-        <div class="JavaScriptSkill">
-          <img id="JavaScriptSkillImage" src="src/assets/JavaScript.png" alt="JavaScript" width="40" height="40" draggable="false">
-          <p id="JavaScriptSkillSentence">Bot</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="Projects">
-      <div class="ProjectsContainer">
-        <div class="D3EngineSkill">
-          <img id="D3EngineSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
-          <a id="D3EngineProjectSentence" href="https://github.com/Lucachinou/3dEngine" target="_blank">An open-source OpenGL 3D engine</a>
+        <div>
+          <h1 class="hero__name">Lucachinou</h1>
+          <p class="hero__meta">Luca <span class="sep">•</span> 16 ans <span class="sep">•</span> Développeur</p>
         </div>
 
-        <div class="SinglecraftSkill">
-          <img id="SinglecraftSkillImage" src="src/assets/Python.png" alt="Python" width="40" height="40" draggable="false" style="user-select: none; -webkit-user-select: none; margin-bottom: 5px; margin-left: 5px; align-self: flex-end; filter: saturate(0.0%); transition: filter 0.3s ease-in-out;">
-          <a id="SinglecraftProjectSentence" href="https://github.com/Lucachinou/Singlecraft" target="_blank">An open-source Minecraft server management</a>
+        <p class="hero__bio">
+          J'apprends et je construis des projets <strong>open-source</strong> : moteurs graphiques,
+          outils serveurs et bots. Principalement en <strong>Python</strong>, <strong>Java</strong> et
+          <strong>JavaScript</strong>.
+        </p>
+
+        <nav class="socials" aria-label="Réseaux sociaux">
+          <a class="social" href="https://github.com/Lucachinou" target="_blank" rel="noopener noreferrer">
+            <img src="src/assets/Github.svg" alt="" width="16" height="16" draggable="false" /> GitHub
+          </a>
+          <a class="social" href="https://discord.gg/G8q8cGyX42" target="_blank" rel="noopener noreferrer">
+            <img src="src/assets/Discord.svg" alt="" width="16" height="16" draggable="false" /> Discord
+          </a>
+          <a class="social" href="https://www.youtube.com/@lucachinou" target="_blank" rel="noopener noreferrer">
+            <img src="src/assets/YouTube.svg" alt="" width="16" height="16" draggable="false" /> YouTube
+          </a>
+          <a class="social" href="https://www.twitch.tv/lucachinou" target="_blank" rel="noopener noreferrer">
+            <img src="src/assets/Twitch.svg" alt="" width="16" height="16" draggable="false" /> Twitch
+          </a>
+        </nav>
+      </header>
+
+      <!-- Onglets -->
+      <section>
+        <div class="tabs" role="tablist" aria-label="Sections">
+          <span class="tabs__pill" aria-hidden="true"></span>
+          <button class="tab" id="tab-skills" role="tab" aria-controls="panel-skills" aria-selected="true">
+            Compétences
+          </button>
+          <button class="tab" id="tab-projects" role="tab" aria-controls="panel-projects" aria-selected="false">
+            Projets
+          </button>
         </div>
-      </div>
-    </div>
+
+        <!-- Compétences -->
+        <div class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" style="margin-top: 24px">
+          <div class="grid">
+            <article class="card">
+              <div class="card__head">
+                <img class="card__icon" src="src/assets/Python.png" alt="" width="22" height="22" draggable="false" />
+                <h2 class="card__title">Python</h2>
+              </div>
+              <p class="card__desc">Automatisation, intelligence artificielle et rendu temps réel.</p>
+              <div class="card__tags"><span class="tag">IA</span><span class="tag">OpenGL</span><span class="tag">Bots</span></div>
+            </article>
+
+            <article class="card">
+              <div class="card__head">
+                <img class="card__icon" src="src/assets/Java.png" alt="" width="22" height="22" draggable="false" />
+                <h2 class="card__title">Java</h2>
+              </div>
+              <p class="card__desc">Plugins et outils pour l'écosystème Minecraft.</p>
+              <div class="card__tags"><span class="tag">Minecraft</span><span class="tag">Backend</span></div>
+            </article>
+
+            <article class="card">
+              <div class="card__head">
+                <img class="card__icon" src="src/assets/JavaScript.png" alt="" loading="lazy" draggable="false" />
+                <h2 class="card__title">JavaScript</h2>
+              </div>
+              <p class="card__desc">Bots Discord et interfaces web légères.</p>
+              <div class="card__tags"><span class="tag">Node.js</span><span class="tag">Web</span></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Projets -->
+        <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden style="margin-top: 24px">
+          <div class="grid">
+            <a
+              class="card"
+              href="https://github.com/Lucachinou/3dEngine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="card__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="card__head">
+                <img class="card__icon" src="src/assets/Python.png" alt="" width="22" height="22" draggable="false" />
+                <h2 class="card__title">3D Engine</h2>
+              </div>
+              <p class="card__desc">Un moteur 3D open-source basé sur OpenGL.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">OpenGL</span></div>
+            </a>
+
+            <a
+              class="card"
+              href="https://github.com/Lucachinou/Singlecraft"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="card__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="card__head">
+                <img class="card__icon" src="src/assets/Python.png" alt="" width="22" height="22" draggable="false" />
+                <h2 class="card__title">Singlecraft</h2>
+              </div>
+              <p class="card__desc">Gestion de serveurs Minecraft, open-source et simple d'usage.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">Minecraft</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="year">2026</span> Lucachinou</span>
+        <a href="https://github.com/Lucachinou/lucachinou.github.io" target="_blank" rel="noopener noreferrer">
+          Code source
+        </a>
+      </footer>
+    </main>
 
     <script>
-      const Selector = document.getElementById("Selector");
-      const SkillsButton = document.getElementById("SkillsBtn");
-      const ProjectsButton = document.getElementById("ProjectsBtn");
+      (function () {
+        const tabs = Array.from(document.querySelectorAll('.tab'));
+        const pill = document.querySelector('.tabs__pill');
 
-      let SkillsSection = document.getElementsByClassName("SkillsContainer")[0];
-      let ProjectsSection = document.getElementsByClassName("ProjectsContainer")[0];
+        function movePill(tab) {
+          pill.style.width = tab.offsetWidth + 'px';
+          pill.style.transform = 'translateX(' + tab.offsetLeft + 'px)';
+        }
 
-      let CurrentSelected = SkillsButton;
+        function select(tab) {
+          tabs.forEach((t) => {
+            const active = t === tab;
+            t.setAttribute('aria-selected', String(active));
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            panel.hidden = !active;
+            if (active) {
+              // relance l'animation d'apparition
+              const grid = panel.querySelector('.grid');
+              grid.style.animation = 'none';
+              void grid.offsetWidth;
+              grid.style.animation = '';
+            }
+          });
+          movePill(tab);
+        }
 
-      SkillsSection.style.display = 'grid'
+        tabs.forEach((tab) => tab.addEventListener('click', () => select(tab)));
 
-      SkillsButton.addEventListener('click', () => {
-        CurrentSelected = SkillsButton;
-        SkillsSection.style.display = 'grid'
-        ProjectsSection.style.display = 'none'
-        ComputeSelectorPosition();
-      });
+        // Navigation clavier entre les onglets
+        document.querySelector('.tabs').addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+          const current = tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true');
+          const next = (current + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+          tabs[next].focus();
+          select(tabs[next]);
+        });
 
-      ProjectsButton.addEventListener('click', () => {
-        CurrentSelected = ProjectsButton;
-        SkillsSection.style.display = 'none'
-        ProjectsSection.style.display = 'grid'
-        ComputeSelectorPosition();
-      });
-      
-      function ComputeSelectorPosition() {
-        const bound = CurrentSelected.getBoundingClientRect();
-      
-        Selector.style.position = 'absolute';
-        Selector.style.left = (bound.left + bound.width / 2 - 5) + "px";
-        Selector.style.top = (bound.top + window.scrollY - Selector.offsetHeight + 55) + "px";
-      }
-      ComputeSelectorPosition();
+        // Position initiale de la pastille
+        const active = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+        movePill(active);
+        window.addEventListener('resize', () => {
+          const current = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+          movePill(current);
+        });
 
-      window.addEventListener('resize', ComputeSelectorPosition);
-      window.addEventListener('scroll', ComputeSelectorPosition);
+        document.getElementById('year').textContent = String(new Date().getFullYear());
+      })();
     </script>
   </body>
 </html>
