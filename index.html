@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#08080a" />
     <link rel="icon" type="image/svg+xml" href="src/assets/Memojis.svg" />
 
@@ -22,7 +22,7 @@
     <link rel="preload" href="src/assets/Fonts/SF-Pro-Display-Semibold.otf" as="font" type="font/otf" crossorigin="anonymous" />
 
     <style>
-      /* ---------- Typographie ---------- */
+      /* ---------- Fonts ---------- */
       @font-face {
         font-family: 'SF Pro';
         src: url('src/assets/Fonts/SF-Pro-Display-Regular.otf') format('opentype');
@@ -45,7 +45,6 @@
         font-display: swap;
       }
 
-      /* ---------- Design tokens ---------- */
       :root {
         --bg: #08080a;
         --bg-glow: #17171c;
@@ -67,6 +66,7 @@
         --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
         --speed: 0.25s;
 
+        --tap: 44px;
         --content-width: 720px;
       }
 
@@ -79,13 +79,16 @@
 
       html {
         -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
       }
 
       body {
         margin: 0;
+        min-height: 100vh;
         min-height: 100svh;
+        overflow-x: hidden;
         background-color: var(--bg);
-        background-image: radial-gradient(120% 80% at 50% -10%, var(--bg-glow) 0%, transparent 60%);
+        background-image: radial-gradient(140% 70% at 50% -5%, var(--bg-glow) 0%, transparent 62%);
         background-repeat: no-repeat;
         color: var(--text);
         font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, system-ui, sans-serif;
@@ -93,6 +96,7 @@
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
       }
 
       img {
@@ -116,23 +120,24 @@
         width: 100%;
         max-width: var(--content-width);
         margin-inline: auto;
-        padding: clamp(56px, 12vh, 112px) 20px 64px;
+        padding-block: clamp(32px, 7vh, 96px) calc(40px + env(safe-area-inset-bottom, 0px));
+        padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px));
         display: flex;
         flex-direction: column;
-        gap: clamp(36px, 6vh, 56px);
+        gap: clamp(28px, 5vh, 52px);
       }
 
-      /* ---------- En-tête ---------- */
+      /* ---------- Header ---------- */
       .hero {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: clamp(14px, 3.5vw, 20px);
       }
 
       .hero__avatar {
-        width: 72px;
-        height: 72px;
+        width: clamp(60px, 16vw, 72px);
+        height: clamp(60px, 16vw, 72px);
         border-radius: var(--radius-full);
         border: 1px solid var(--border);
         background: var(--surface);
@@ -142,7 +147,7 @@
 
       .hero__name {
         margin: 0;
-        font-size: clamp(2rem, 7vw, 2.75rem);
+        font-size: clamp(1.9rem, 9vw, 2.75rem);
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 1.1;
@@ -164,7 +169,8 @@
         margin: 0;
         max-width: 52ch;
         color: var(--text-muted);
-        font-size: 1rem;
+        font-size: clamp(0.95rem, 3.6vw, 1rem);
+        text-wrap: pretty;
       }
 
       .hero__bio strong {
@@ -172,7 +178,7 @@
         font-weight: 500;
       }
 
-      /* ---------- Liens sociaux ---------- */
+      /* ---------- Socials Links ---------- */
       .socials {
         display: flex;
         flex-wrap: wrap;
@@ -183,16 +189,19 @@
       .social {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 8px;
-        padding: 7px 13px 7px 10px;
+        min-height: 40px;
+        padding: 8px 15px 8px 12px;
         border: 1px solid var(--border);
         border-radius: var(--radius-full);
         background: var(--surface);
         color: var(--text-muted);
         font-size: 0.85rem;
         font-weight: 500;
+        touch-action: manipulation;
         transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease),
-          color var(--speed) var(--ease);
+          color var(--speed) var(--ease), transform 0.12s var(--ease);
       }
 
       .social img {
@@ -204,22 +213,54 @@
         transition: filter var(--speed) var(--ease), opacity var(--speed) var(--ease);
       }
 
-      .social:hover {
+      /* Effets de survol réservés aux périphériques à pointeur */
+      @media (hover: hover) and (pointer: fine) {
+        .social:hover {
+          background: var(--surface-hover);
+          border-color: var(--border-strong);
+          color: var(--text);
+        }
+
+        .social:hover img {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+
+        .tab:hover {
+          color: var(--text-muted);
+        }
+
+        a.card:hover {
+          background: var(--surface-hover);
+          border-color: var(--border-strong);
+          transform: translateY(-2px);
+        }
+
+        .card:hover .card__icon {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+
+        a.card:hover .card__arrow {
+          color: var(--text);
+          transform: translate(2px, -2px);
+        }
+      }
+
+      /* Retour tactile immédiat */
+      .social:active,
+      a.card:active {
         background: var(--surface-hover);
         border-color: var(--border-strong);
-        color: var(--text);
+        transform: scale(0.98);
       }
 
-      .social:hover img {
-        filter: grayscale(0);
-        opacity: 1;
-      }
-
-      /* ---------- Onglets ---------- */
+      /* ---------- Tabs ---------- */
       .tabs {
         position: relative;
         display: inline-flex;
-        align-self: flex-start;
+        width: fit-content;
+        max-width: 100%;
         gap: 2px;
         padding: 4px;
         border: 1px solid var(--border);
@@ -249,28 +290,30 @@
         font-family: inherit;
         font-size: 0.9rem;
         font-weight: 500;
+        min-height: 38px;
         padding: 7px 18px;
         border-radius: var(--radius-full);
         cursor: pointer;
+        touch-action: manipulation;
         transition: color var(--speed) var(--ease);
-      }
-
-      .tab:hover {
-        color: var(--text-muted);
       }
 
       .tab[aria-selected='true'] {
         color: var(--text);
       }
 
-      /* ---------- Grilles & cartes ---------- */
+      /* ---------- Grids & cards ---------- */
+      .panel {
+        margin-top: clamp(18px, 4vw, 24px);
+      }
+
       .panel[hidden] {
         display: none;
       }
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
         gap: 12px;
         animation: fade-up 0.4s var(--ease) both;
       }
@@ -291,18 +334,12 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 18px;
+        padding: clamp(15px, 4.5vw, 18px);
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
         background: var(--surface);
         transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease),
           transform var(--speed) var(--ease);
-      }
-
-      a.card:hover {
-        background: var(--surface-hover);
-        border-color: var(--border-strong);
-        transform: translateY(-2px);
       }
 
       .card__head {
@@ -320,11 +357,6 @@
         transition: filter var(--speed) var(--ease), opacity var(--speed) var(--ease);
       }
 
-      .card:hover .card__icon {
-        filter: grayscale(0);
-        opacity: 1;
-      }
-
       .card__title {
         margin: 0;
         font-size: 0.975rem;
@@ -337,6 +369,7 @@
         color: var(--text-muted);
         font-size: 0.875rem;
         line-height: 1.5;
+        text-wrap: pretty;
       }
 
       .card__tags {
@@ -357,17 +390,12 @@
 
       .card__arrow {
         position: absolute;
-        top: 18px;
-        right: 18px;
+        top: clamp(15px, 4.5vw, 18px);
+        right: clamp(15px, 4.5vw, 18px);
         width: 14px;
         height: 14px;
         color: var(--text-faint);
         transition: transform var(--speed) var(--ease), color var(--speed) var(--ease);
-      }
-
-      a.card:hover .card__arrow {
-        color: var(--text);
-        transform: translate(2px, -2px);
       }
 
       /* ---------- Footer ---------- */
@@ -383,18 +411,40 @@
         font-size: 0.8rem;
       }
 
+      .footer a {
+        min-height: var(--tap);
+        display: inline-flex;
+        align-items: center;
+      }
+
       .footer a:hover {
         color: var(--text-muted);
       }
 
       /* ---------- Responsive ---------- */
-      @media (max-width: 480px) {
-        .grid {
-          grid-template-columns: 1fr;
+      @media (max-width: 560px) {
+        .card__title {
+          padding-right: 22px;
         }
-        .hero__avatar {
-          width: 64px;
-          height: 64px;
+
+        .tab {
+          min-height: var(--tap);
+          padding-inline: 20px;
+        }
+
+        .socials {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .social {
+          min-height: 42px;
+        }
+
+        .footer {
+          justify-content: flex-start;
+          gap: 4px 16px;
         }
       }
 
@@ -463,7 +513,7 @@
         </div>
 
         <!-- Compétences -->
-        <div class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" style="margin-top: 24px">
+        <div class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills">
           <div class="grid">
             <article class="card">
               <div class="card__head">
@@ -495,7 +545,7 @@
         </div>
 
         <!-- Projets -->
-        <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden style="margin-top: 24px">
+        <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
           <div class="grid">
             <a
               class="card"
@@ -544,8 +594,13 @@
 
     <script>
       (function () {
+        const tabList = document.querySelector('.tabs');
         const tabs = Array.from(document.querySelectorAll('.tab'));
         const pill = document.querySelector('.tabs__pill');
+
+        function currentTab() {
+          return tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+        }
 
         function movePill(tab) {
           pill.style.width = tab.offsetWidth + 'px';
@@ -580,13 +635,25 @@
           select(tabs[next]);
         });
 
-        // Position initiale de la pastille
-        const active = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
-        movePill(active);
-        window.addEventListener('resize', () => {
-          const current = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
-          movePill(current);
+        // Position initiale, sans animation de glissement au premier rendu
+        pill.style.transition = 'none';
+        movePill(currentTab());
+        requestAnimationFrame(() => {
+          pill.style.transition = '';
         });
+
+        // Repositionne une fois SF Pro chargée (la largeur des libellés change)
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => movePill(currentTab()));
+        }
+
+        // ResizeObserver plutôt que « resize » : ignore l'apparition/disparition
+        // de la barre d'URL mobile, qui ne modifie pas la largeur des onglets.
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(() => movePill(currentTab())).observe(tabList);
+        } else {
+          window.addEventListener('resize', () => movePill(currentTab()));
+        }
 
         document.getElementById('year').textContent = String(new Date().getFullYear());
       })();
