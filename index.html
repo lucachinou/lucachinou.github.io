@@ -475,13 +475,13 @@
 
         <div>
           <h1 class="hero__name">Lucachinou</h1>
-          <p class="hero__meta">Luca <span class="sep">•</span> 16 ans <span class="sep">•</span> Développeur</p>
+          <p class="hero__meta">Luca <span class="sep">•</span> <span id="years_old"></span> ans <span class="sep">•</span> Développeur</p>
         </div>
 
         <p class="hero__bio">
           J'apprends et je construis des projets <strong>open-source</strong> : moteurs graphiques,
-          outils serveurs et bots. Principalement en <strong>Python</strong>, <strong>Java</strong> et
-          <strong>JavaScript</strong>.
+          outils serveurs et bots. Principalement en <strong>Python</strong>, <strong>Rust</strong> et
+          <strong>Java</strong>.
         </p>
 
         <nav class="socials" aria-label="Réseaux sociaux">
@@ -500,7 +500,7 @@
         </nav>
       </header>
 
-      <!-- Onglets -->
+      <!-- Tabs -->
       <section>
         <div class="tabs" role="tablist" aria-label="Sections">
           <span class="tabs__pill" aria-hidden="true"></span>
@@ -521,7 +521,7 @@
                 <h2 class="card__title">Python</h2>
               </div>
               <p class="card__desc">Automatisation, intelligence artificielle et rendu temps réel.</p>
-              <div class="card__tags"><span class="tag">IA</span><span class="tag">OpenGL</span><span class="tag">Bots</span></div>
+              <div class="card__tags"><span class="tag">Intelligence-Artificielle</span><span class="tag">OpenGL</span><span class="tag">Bots</span></div>
             </article>
 
             <article class="card">
@@ -530,7 +530,7 @@
                 <h2 class="card__title">Java</h2>
               </div>
               <p class="card__desc">Plugins et outils pour l'écosystème Minecraft.</p>
-              <div class="card__tags"><span class="tag">Minecraft</span><span class="tag">Backend</span></div>
+              <div class="card__tags"><span class="tag">Minecraft</span><span class="tag">Back-end</span></div>
             </article>
 
             <article class="card">
@@ -544,7 +544,7 @@
           </div>
         </div>
 
-        <!-- Projets -->
+        <!-- Projects -->
         <div class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
           <div class="grid">
             <a
@@ -656,6 +656,7 @@
         }
 
         document.getElementById('year').textContent = String(new Date().getFullYear());
+        document.getElementById('years_old').textContent = String(new Date().getFullYear() - 2009);
       })();
     </script>
   </body>
