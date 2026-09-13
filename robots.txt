@@ -1,9 +1,37 @@
+# https://lucachinou.github.io/
 User-agent: *
 Allow: /
 
 Disallow: /discord.html
-
 Disallow: /BingSiteAuth.xml
 Disallow: /.well-known/
+
+# --- Moteurs génératifs : autorisés (citation = visibilité) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://lucachinou.github.io/sitemap.xml

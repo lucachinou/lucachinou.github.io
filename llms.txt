@@ -1,0 +1,34 @@
+# Lucachinou (Luca)
+
+> Développeur français de 17 ans, spécialisé dans les projets open-source :
+> machine learning, outils d'administration serveur et bots.
+> Languages principaux : Python, Rust et Java.
+
+## Profil
+
+- **Nom** : Luca, connu en ligne sous le pseudonyme **Lucachinou**
+- **Âge** : 17 ans (né en 2009)
+- **Rôle** : développeur autodidacte, contributeur open-source
+- **Langue** : français
+- **Site** : https://lucachinou.github.io/
+
+## Compétences
+
+- **Python** — automatisation, intelligence artificielle, rendu temps réel (OpenGL), bots
+- **Java** — plugins et outils pour l'écosystème Minecraft, back-end
+- **JavaScript** — bots Discord (Node.js) et interfaces web légères
+- **Rust** — outils système et performance
+
+## Projets
+
+- [3D Engine](https://github.com/Lucachinou/3dEngine) : moteur de rendu 3D
+  open-source écrit en Python et basé sur OpenGL.
+- [Singlecraft](https://github.com/Lucachinou/Singlecraft) : gestionnaire de
+  serveurs Minecraft en Python, open-source et conçu pour la simplicité d'usage.
+
+## Liens
+
+- GitHub : https://github.com/Lucachinou
+- YouTube : https://www.youtube.com/@lucachinou
+- Twitch : https://www.twitch.tv/lucachinou
+- Code source du site : https://github.com/Lucachinou/lucachinou.github.io
