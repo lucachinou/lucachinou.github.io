@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /discord.html
+
+Disallow: /BingSiteAuth.xml
+Disallow: /.well-known/
+
+Sitemap: https://lucachinou.github.io/sitemap.xml
