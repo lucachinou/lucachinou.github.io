@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GarfieldTVA/aideia/schemas/aideia.project.schema.json",
+  "title": "aideia project visual profile",
+  "type": "object",
+  "required": ["version", "product", "visual"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "product": {
+      "type": "object",
+      "required": ["name", "kind", "primaryTasks"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "primaryTasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": [
+        "density", "geometry", "surface", "typography", "contrast",
+        "colorBehavior", "composition", "navigation", "motion", "imagery"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "density": { "enum": ["sparse", "comfortable", "compact", "information-dense"] },
+        "geometry": { "enum": ["sharp", "restrained-radius", "soft", "product-specific"] },
+        "surface": { "enum": ["flat", "bordered", "layered", "elevated", "textured", "product-specific"] },
+        "typography": { "enum": ["neutral", "editorial", "technical", "playful", "display-led", "product-specific"] },
+        "contrast": { "enum": ["quiet", "balanced", "high", "dramatic"] },
+        "colorBehavior": { "enum": ["monochrome-led", "sparse-accent", "semantic-rich", "expressive", "product-specific"] },
+        "composition": { "enum": ["grid-regular", "asymmetric", "editorial", "tool-like", "immersive", "product-specific"] },
+        "navigation": { "enum": ["top-led", "side-led", "contextual", "command-led", "in-world", "product-specific"] },
+        "motion": { "enum": ["nearly-static", "snappy", "mechanical", "soft", "expressive", "product-specific"] },
+        "imagery": { "enum": ["none", "product-screenshots", "photography", "illustration", "3d", "game-native", "product-specific"] },
+        "dataTreatment": { "enum": ["prose-led", "list-led", "table-led", "chart-led", "spatial", "mixed"] },
+        "signatureMotif": { "type": "string" }
+      }
+    },
+    "avoid": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pathOrUrl", "borrow", "doNotCopy"],
+        "additionalProperties": false,
+        "properties": {
+          "pathOrUrl": { "type": "string", "minLength": 1 },
+          "borrow": { "type": "array", "items": { "type": "string" } },
+          "doNotCopy": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -11,7 +11,7 @@
     <title>Lucachinou</title>
     <meta
       name="description"
-      content="Portfolio de Luca (Lucachinou), développeur de 17 ans. Projets Python, Rust et Java : Machine Learning, gestionnaire de serveurs Minecraft et moteur 3D."
+      content="Portfolio of Luca (Lucachinou), a 17-year-old French AI Engineer. Open-source Machine Learning projects in Python with PyTorch, TensorFlow and SpaCy, plus Rust and Java development."
     />
     <meta name="author" content="Luca (Lucachinou)" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -19,9 +19,9 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Lucachinou" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Lucachinou" />
-    <meta property="og:description" content="Obtenez plus d'informations sur imo, tel que mes projets et compètences."/>
+    <meta property="og:description" content="Learn more about me: my Machine Learning projects, skills and open-source work."/>
     <meta property="og:image" content="https://lucachinou.github.io/assets/images/og-cover.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Lucachinou" />
     <meta
       name="twitter:description"
-      content="Machine Learning, Moteur 3D OpenGL, outils serveurs Minecraft et bots Discord. Tous mes projets au même endroit."
+      content="Machine Learning, an OpenGL 3D engine, Minecraft server tools and Discord bots. All my projects in one place."
     />
     <meta name="twitter:image" content="https://lucachinou.github.io/assets/images/og-cover.png" />
 
@@ -208,6 +208,11 @@
         font-weight: 500;
       }
 
+      .status strong {
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
       /* ---------- Socials Links ---------- */
       .socials {
         display: flex;
@@ -243,7 +248,7 @@
         transition: filter var(--speed) var(--ease), opacity var(--speed) var(--ease);
       }
 
-      /* Effets de survol réservés aux périphériques à pointeur */
+      /* Hover effects only for devices with a precise pointer */
       @media (hover: hover) and (pointer: fine) {
         .social:hover {
           background: var(--surface-hover);
@@ -277,7 +282,7 @@
         }
       }
 
-      /* Retour tactile immédiat */
+      /* Instant touch feedback */
       .social:active,
       a.card:active {
         background: var(--surface-hover);
@@ -494,14 +499,14 @@
         "@graph": [
           {
             "@type": "Person",
-            "@id": "https://lucachinou.github.io/",
+            "@id": "https://lucachinou.github.io/#person",
             "name": "Luca",
             "alternateName": "Lucachinou",
             "url": "https://lucachinou.github.io/",
             "image": "https://lucachinou.github.io/assets/images/Memojis.svg",
-            "jobTitle": "Développeur",
-            "description": "Développeur : moteurs graphiques, bots et machine learning.",
-            "knowsAbout": ["Python", "Rust", "Java", "JavaScript", "OpenGL", "Minecraft", "Machine Learning", "AI", "Artificial Intelligence"],
+            "jobTitle": "AI Engineer",
+            "description": "I'm a 17-year-old French AI Engineer building open-source Machine Learning projects in Python with PyTorch, TensorFlow and SpaCy, and also developing in Rust and Java.",
+            "knowsAbout": ["Python", "Machine Learning", "ML", "AI", "Artificial Intelligence", "PyTorch", "TensorFlow", "SpaCy", "Rust", "Java"],
             "sameAs": [
               "https://github.com/Lucachinou",
               "https://www.youtube.com/@lucachinou",
@@ -513,21 +518,21 @@
             "@id": "https://lucachinou.github.io/",
             "url": "https://lucachinou.github.io/",
             "name": "Lucachinou",
-            "inLanguage": "fr-FR",
-            "author": { "@id": "https://lucachinou.github.io/" }
+            "inLanguage": "en-US",
+            "author": { "@id": "https://lucachinou.github.io/#person" }
           },
           {
             "@type": "SoftwareSourceCode",
             "name": "3D Engine",
-            "description": "Un moteur 3D open-source basé sur OpenGL.",
+            "description": "An open-source 3D engine built on OpenGL.",
             "codeRepository": "https://github.com/Lucachinou/3dEngine",
             "programmingLanguage": "Python",
-            "author": { "@id": "https://lucachinou.github.io/" }
+            "author": { "@id": "https://lucachinou.github.io/#person" }
           },
           {
             "@type": "SoftwareSourceCode",
             "name": "Singlecraft",
-            "description": "Gestion de serveurs Minecraft, open-source et simple d'usage.",
+            "description": "Open-source, easy-to-use Minecraft server management.",
             "codeRepository": "https://github.com/Lucachinou/Singlecraft",
             "programmingLanguage": "Python",
             "author": { "@id": "https://lucachinou.github.io/#person" }
@@ -538,26 +543,26 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Qui est Lucachinou ?",
+                "name": "Who is Lucachinou?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Lucachinou est le pseudonyme de Luca, un développeur français de 17 ans qui conçoit des projets : machine learning, moteur 3d, outils d'administration de serveurs et bots. Il programme principalement en Python, Rust et Java."
+                  "text": "Lucachinou is the online name of Luca, a 17-year-old French AI Engineer who builds open-source projects: Machine Learning with PyTorch, TensorFlow and SpaCy, a 3D engine, server administration tools and bots. He mainly codes in Python, Rust and Java."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Quels projets open-source Lucachinou a-t-il développés ?",
+                "name": "What open-source projects has Lucachinou built?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Lucachinou a développé 3D Engine, un moteur de rendu 3D en Python basé sur OpenGL depuis 1 an et demi, et Singlecraft, un gestionnaire de serveurs Minecraft en Python conçu pour être simple d'usage depuis 3 ans. Les deux sont publiés sur GitHub sous le compte Lucachinou."
+                  "text": "Lucachinou has been building 3D Engine, a Python 3D rendering engine based on OpenGL, for a year and a half, and Singlecraft, an easy-to-use Python Minecraft server manager, for 3 years. Both are published on GitHub under the Lucachinou account."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Quels langages de programmation Lucachinou maîtrise-t-il ?",
+                "name": "Which programming languages does Lucachinou know?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Lucachinou utilise Python pour l'automatisation, l'intelligence artificielle et le rendu temps réel et machine learning, Java pour les plugins Minecraft et le back-end, Python pour les bots Discord et les interfaces web, ainsi que Rust."
+                  "text": "Lucachinou uses Python for Machine Learning (PyTorch, TensorFlow, SpaCy), automation and real-time rendering, Java for Minecraft plugins and back-end work, JavaScript for Discord bots and web interfaces, as well as Rust."
                 }
               }
             ]
@@ -582,16 +587,16 @@
 
         <div>
           <h1 class="hero__name">Lucachinou</h1>
-          <p class="hero__meta">Luca <span class="sep">•</span> <span id="years_old"></span> ans <span class="sep">•</span> Développeur</p>
+          <p class="hero__meta">Luca <span class="sep">•</span> <span id="years_old"></span> y/o <span class="sep">•</span> AI Engineer</p>
         </div>
 
         <p class="hero__bio">
-          J'apprends et je construis des projets <strong>open-source</strong> : Machine Learning,
-          outils serveurs et bots. Principalement en <strong>Python</strong>, <strong>Rust</strong> et
+          I build <strong>open-source</strong> Machine Learning projects with PyTorch, TensorFlow and SpaCy,
+          along with server tools and bots. Mostly in <strong>Python</strong>, <strong>Rust</strong> and
           <strong>Java</strong>.
         </p>
 
-        <nav class="socials" aria-label="Réseaux sociaux">
+        <nav class="socials" aria-label="Social links">
           <a class="social" href="https://github.com/Lucachinou" target="_blank" rel="noopener noreferrer">
             <img src="assets/images/Github.svg" alt="" width="16" height="16" draggable="false" /> GitHub
           </a>
@@ -612,24 +617,24 @@
         <div class="tabs" role="tablist" aria-label="Sections">
           <span class="tabs__pill" aria-hidden="true"></span>
           <button class="tab" id="tab-skills" role="tab" aria-controls="panel-skills" aria-selected="true">
-            Compétences
+            Skills
           </button>
           <button class="tab" id="tab-projects" role="tab" aria-controls="panel-projects" aria-selected="false">
-            Projets
+            Projects
           </button>
         </div>
 
-        <!-- Compétences -->
+        <!-- Skills -->
         <div class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills">
-          <h2 class="sr-only">Compétences techniques</h2>
+          <h2 class="sr-only">Technical skills</h2>
           <div class="grid">
             <article class="card">
               <div class="card__head">
-                <img class="card__icon" src="assets/images/Python.png" alt="Logo Python" width="22" height="22" draggable="false" />
+                <img class="card__icon" src="assets/images/Python.png" alt="Python logo" width="22" height="22" draggable="false" />
                 <h3 class="card__title">Python</h3>
               </div>
-              <p class="card__desc">Automatisation, intelligence artificielle et rendu temps réel.</p>
-              <div class="card__tags"><span class="tag">Machine Learning</span><span class="tag">OpenGL</span><span class="tag">Bots</span></div>
+              <p class="card__desc">Machine Learning, automation and real-time rendering.</p>
+              <div class="card__tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">SpaCy</span><span class="tag">OpenGL</span></div>
             </article>
 
             <article class="card">
@@ -637,7 +642,7 @@
                 <img class="card__icon" src="assets/images/Java.png" alt="" width="22" height="22" draggable="false" />
                 <h2 class="card__title">Java</h2>
               </div>
-              <p class="card__desc">Plugins et outils pour l'écosystème Minecraft.</p>
+              <p class="card__desc">Plugins and tools for the Minecraft ecosystem.</p>
               <div class="card__tags"><span class="tag">Minecraft</span><span class="tag">Back-end</span></div>
             </article>
 
@@ -646,7 +651,7 @@
                 <img class="card__icon" src="assets/images/JavaScript.png" alt="" loading="lazy" draggable="false" />
                 <h2 class="card__title">JavaScript</h2>
               </div>
-              <p class="card__desc">Bots Discord et interfaces web légères.</p>
+              <p class="card__desc">Discord bots and lightweight web interfaces.</p>
               <div class="card__tags"><span class="tag">Node.js</span><span class="tag">Web</span></div>
             </article>
           </div>
@@ -668,7 +673,7 @@
                 <img class="card__icon" src="assets/images/Python.png" alt="" width="22" height="22" draggable="false" />
                 <h2 class="card__title">3D Engine</h2>
               </div>
-              <p class="card__desc">Un moteur 3D open-source basé sur OpenGL.</p>
+              <p class="card__desc">An open-source 3D engine built on OpenGL.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">OpenGL</span></div>
             </a>
 
@@ -685,7 +690,7 @@
                 <img class="card__icon" src="assets/images/Python.png" alt="" width="22" height="22" draggable="false" />
                 <h2 class="card__title">Singlecraft</h2>
               </div>
-              <p class="card__desc">Gestion de serveurs Minecraft, open-source et simple d'usage.</p>
+              <p class="card__desc">Open-source, easy-to-use Minecraft server management.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">Minecraft</span></div>
             </a>
           </div>
@@ -695,7 +700,7 @@
       <footer class="footer">
         <span>© <span id="year">2026</span> Lucachinou</span>
         <a href="https://github.com/Lucachinou/lucachinou.github.io" target="_blank" rel="noopener noreferrer">
-          Code source
+          Source code
         </a>
       </footer>
     </main>
@@ -722,7 +727,7 @@
             const panel = document.getElementById(t.getAttribute('aria-controls'));
             panel.hidden = !active;
             if (active) {
-              // relance l'animation d'apparition
+              // replay the fade-in animation
               const grid = panel.querySelector('.grid');
               grid.style.animation = 'none';
               void grid.offsetWidth;
@@ -734,7 +739,7 @@
 
         tabs.forEach((tab) => tab.addEventListener('click', () => select(tab)));
 
-        // Navigation clavier entre les onglets
+        // Keyboard navigation between tabs
         document.querySelector('.tabs').addEventListener('keydown', (e) => {
           if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
           const current = tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true');
@@ -743,7 +748,7 @@
           select(tabs[next]);
         });
 
-        // Position initiale, sans animation de glissement au premier rendu
+        // Initial position, without the slide animation on first render
         pill.style.transition = 'none';
         movePill(currentTab());
         requestAnimationFrame(() => {

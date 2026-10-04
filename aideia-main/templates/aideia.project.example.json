@@ -1,0 +1,35 @@
+{
+  "$schema": "../schemas/aideia.project.schema.json",
+  "version": 1,
+  "product": {
+    "name": "Example product",
+    "kind": "game utility",
+    "primaryTasks": [
+      "inspect game state",
+      "perform a high-attention action",
+      "review history"
+    ]
+  },
+  "visual": {
+    "density": "compact",
+    "geometry": "restrained-radius",
+    "surface": "bordered",
+    "typography": "technical",
+    "contrast": "high",
+    "colorBehavior": "sparse-accent",
+    "composition": "asymmetric",
+    "navigation": "contextual",
+    "motion": "snappy",
+    "imagery": "game-native",
+    "dataTreatment": "mixed",
+    "signatureMotif": "Use the product's own game/material language for focal interactions; keep ordinary controls restrained."
+  },
+  "avoid": [
+    "generic SaaS dashboard",
+    "four-stat-card opening row",
+    "purple/cyan glow as a default premium effect",
+    "unnecessary explanatory paragraphs",
+    "every section inside a rounded card"
+  ],
+  "references": []
+}
