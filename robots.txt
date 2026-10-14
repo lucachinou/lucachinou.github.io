@@ -3,10 +3,10 @@ User-agent: *
 Allow: /
 
 Disallow: /discord.html
+Disallow: /archived/index.html
 Disallow: /BingSiteAuth.xml
 Disallow: /.well-known/
 
-# --- Moteurs génératifs : autorisés (citation = visibilité) ---
 User-agent: GPTBot
 Allow: /
 

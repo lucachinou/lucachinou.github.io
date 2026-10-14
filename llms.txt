@@ -1,21 +1,21 @@
 # Lucachinou (Luca)
 
-> 17-year-old French AI Engineer building open-source projects:
-> Machine Learning (PyTorch, TensorFlow, SpaCy), server administration tools and bots.
+> 17-year-old French student learning AI to become an AI Engineer.
+> Builds open-source projects: Machine Learning (PyTorch, TensorFlow, SpaCy), server administration tools and bots.
 > Main languages: Python, Rust and Java.
 
 ## Profile
 
 - **Name**: Luca, known online as **Lucachinou**
 - **Age**: 17 (born in 2009)
-- **Role**: self-taught AI Engineer, open-source contributor
+- **Role**: studying AI to become an AI Engineer, open-source contributor
 - **Languages spoken**: French, English
 - **Website**: https://lucachinou.github.io/
 
 ## Skills
 
-- **Python**: Machine Learning (PyTorch, TensorFlow, SpaCy), automation, real-time rendering (OpenGL), bots
-- **Java**: plugins and tools for the Minecraft ecosystem, back-end
+- **Python**: Machine Learning (PyTorch, TensorFlow, SpaCy), automation, AI, bots
+- **Java**: plugins and mods for Minecraft, back-end
 - **JavaScript**: Discord bots (Node.js) and lightweight web interfaces
 - **Rust**: system tools and performance
 
