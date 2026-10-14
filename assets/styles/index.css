@@ -209,3 +209,37 @@ footer{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
 .language-trigger{padding:10px 12px}
 .language-trigger .chevron{display:none}
 }
+
+/* Empêcher le défilement horizontal, notamment sur Safari iOS. */
+html,
+body {
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Garder le halo décoratif dans la largeur du hero. */
+  .hero::after {
+    right: 0;
+  }
+
+  /* Autoriser les éléments de la grille à rétrécir. */
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-copy,
+  .hero-art {
+    min-width: 0;
+  }
+
+  .hero h1 {
+    overflow-wrap: anywhere;
+  }
+}
