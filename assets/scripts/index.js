@@ -38,6 +38,7 @@
   translations.set("Photo de profil de Lucachinou", "Lucachinou’s profile picture");
   translations.set("Articles (bientôt)", "Articles (coming soon)");
   translations.set("Bientôt", "Soon");
+  translations.set("Rejoindre mon serveur", "Join my server");
 
   const englishToFrench = new Map(
     [...translations].map(([french, english]) => [english, french])
@@ -65,7 +66,8 @@
     });
   });
 
-  const languageSelect = document.getElementById("languageSelect");
+  const languageCurrent = document.getElementById("languageCurrent");
+  const languageOptions = [...document.querySelectorAll("[data-lang]")];
   const description = document.querySelector('meta[name="description"]');
   const englishDescription = description?.content;
   const englishTitle = document.title;
@@ -73,7 +75,10 @@
   function setLanguage(language) {
     const lang = language === "fr" ? "fr" : "en";
     document.documentElement.lang = lang;
-    languageSelect.value = lang;
+    languageCurrent.textContent = lang.toUpperCase();
+    languageOptions.forEach(option =>
+      option.setAttribute("aria-checked", String(option.dataset.lang === lang))
+    );
 
     textBindings.forEach(({ node, original, key }) => {
       node.textContent = lang === "en"
@@ -113,7 +118,55 @@
   }
 
   setLanguage(savedLanguage);
-  languageSelect.addEventListener("change", event => setLanguage(event.target.value));
+  languageOptions.forEach(option =>
+    option.addEventListener("click", () => setLanguage(option.dataset.lang))
+  );
+
+  // Dropdowns (Contact + langue)
+  const dropdowns = [...document.querySelectorAll("[data-dropdown]")];
+
+  function closeAll(except) {
+    dropdowns.forEach(dropdown => {
+      if (dropdown === except) return;
+      dropdown.classList.remove("open");
+      dropdown.querySelector(".dropdown-trigger").setAttribute("aria-expanded", "false");
+    });
+  }
+
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector(".dropdown-trigger");
+    const items = [...dropdown.querySelectorAll(".dropdown-item")];
+
+    trigger.addEventListener("click", () => {
+      const open = !dropdown.classList.contains("open");
+      closeAll(dropdown);
+      dropdown.classList.toggle("open", open);
+      trigger.setAttribute("aria-expanded", String(open));
+      if (open) items[0]?.focus();
+    });
+
+    items.forEach(item => item.addEventListener("click", () => {
+      closeAll();
+      trigger.focus();
+    }));
+
+    dropdown.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeAll();
+        trigger.focus();
+      } else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        if (!dropdown.classList.contains("open")) return trigger.click();
+        const index = items.indexOf(document.activeElement);
+        const step = event.key === "ArrowDown" ? 1 : items.length - 1;
+        items[(index + step + items.length) % items.length].focus();
+      }
+    });
+  });
+
+  document.addEventListener("click", event => {
+    if (!event.target.closest("[data-dropdown]")) closeAll();
+  });
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
