@@ -10,7 +10,7 @@
     ["Lucachinou, accueil", "Lucachinou, home"],
     ["Choisir la langue", "Choose a language"],
     ["Salut, moi c’est", "Hi, I’m"],
-    ["Je code des idées. Je vois où elles mènent.", "I code ideas. I see where they lead."],
+    ["Des données a l'idée. De l'idée au code.", "From data to ideas. From ideas to code."],
     ["Voir mes projets", "View my projects"],
     ["Illustration graphique aux couleurs jaune et orange", "Graphic illustration in yellow and orange"],
     ["Faire défiler jusqu’aux projets", "Scroll to projects"],

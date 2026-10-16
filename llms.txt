@@ -21,8 +21,6 @@
 
 ## Projects
 
-- [3D Engine](https://github.com/Lucachinou/3dEngine): open-source 3D rendering
-  engine written in Python and based on OpenGL.
 - [Singlecraft](https://github.com/Lucachinou/Singlecraft): open-source Minecraft
   server manager in Python, designed to be easy to use.
 
