@@ -16,6 +16,7 @@
     ["Faire défiler jusqu’aux projets", "Scroll to projects"],
     ["Faire défiler", "Scroll down"],
     ["Mes projets", "My projects"],
+    ["Etudiant pour devenir ingénieur IA.", "Student to become AI Engineer."],
     ["Bêta", "Beta"],
     [
       "Un tableau de bord web pour gérer des serveurs Minecraft : démarrage, arrêt, redémarrage et consultation des logs en direct.",
