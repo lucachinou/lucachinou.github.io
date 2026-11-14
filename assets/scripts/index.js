@@ -22,6 +22,18 @@
       "Un tableau de bord web pour gérer des serveurs Minecraft : démarrage, arrêt, redémarrage et consultation des logs en direct.",
       "A web dashboard for managing Minecraft servers: start, stop, restart and view live logs."
     ],
+    [
+      "Le code source de l’assistant IA actuellement présent sur mon portfolio.",
+      "The source code of the AI assistant currently on my portfolio."
+    ],
+    [
+      "Un modèle de régression qui prédit le prix des maisons uniquement à partir de leur surface. (À but éducatif)",
+      "A regression model to predict pricing of houses only using size. (Educational purpose)"
+    ],
+    [
+      "Un modèle de classification pour détecter les messages d’arnaque. (Surtout sur Discord)",
+      "A classifier model to detect scam messages. (Especially from Discord)"
+    ],
     ["Explorer sur GitHub", "Explore on GitHub"],
     [
       "Moi c’est Luca, un étudiant français qui apprend l’IA pour devenir ingénieur IA. Je crée des projets open source en machine learning avec PyTorch, TensorFlow et SpaCy, ainsi que des outils serveur et des bots — surtout en Python, Rust et Java. J’aime comprendre comment les choses fonctionnent et transformer mes expérimentations en projets concrets.",
@@ -101,7 +113,7 @@
     if (description) {
       description.content = lang === "en"
         ? englishDescription
-        : "Lucachinou — J’étudie l’IA pour devenir ingénieur IA. Machine learning, projets open source et outils.";
+        : "Lucachinou — Étudiant en IA qui crée des projets open source de machine learning avec PyTorch : assistant RAG, détecteur de spam, régression de prix immobiliers et Singlecraft.";
     }
 
     try {
