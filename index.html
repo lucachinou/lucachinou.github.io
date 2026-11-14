@@ -7,7 +7,8 @@
 <meta name="color-scheme" content="dark">
 
 <title>Lucachinou</title>
-<meta name="description" content="Lucachinou — studying AI to become an AI Engineer. Machine learning, open-source projects and tools.">
+<meta name="description" content="Lucachinou — AI student to become an AI Engineer, building open-source machine learning projects with PyTorch: RAG assistant, spam classifier, house price regression and Singlecraft.">
+<meta name="keywords" content="Lucachinou, AI student, engineer, AI Engineer, classifier, regression, Machine Learning, ML, PyTorch, RAG, Spam Classifier, House Pricing Regression, Singlecraft, Python">
 <meta name="author" content="Luca (Lucachinou)">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://lucachinou.github.io/">
@@ -20,17 +21,17 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:title" content="Lucachinou — AI & Machine Learning Student">
-<meta property="og:description" content="Studying AI to become an AI Engineer: machine learning with PyTorch, TensorFlow and SpaCy, open-source projects and tools.">
+<meta property="og:description" content="Studying AI to become an AI Engineer: ML projects with PyTorch: RAG assistant, Discord spam classifier, house price regression and the Singlecraft Minecraft dashboard.">
 <meta property="og:url" content="https://lucachinou.github.io/">
 <meta property="og:image" content="https://lucachinou.github.io/assets/images/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Lucachinou — AI Student">
+<meta property="og:image:alt" content="Lucachinou — AI Engineer Student">
 
 <!-- X / Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lucachinou — AI & Machine Learning Student">
-<meta name="twitter:description" content="Studying AI to become an AI Engineer. Machine learning, open-source projects and tools.">
+<meta name="twitter:description" content="Studying AI to become an AI Engineer: ML projects with PyTorch: RAG assistant, Discord spam classifier, house price regression and the Singlecraft Minecraft dashboard.">
 <meta name="twitter:image" content="https://lucachinou.github.io/assets/images/og-cover.png">
 
 <meta name="google-site-verification" content="jsSScERVs1E4VF_b_JCoEQKKKXF7sIH5IXGDQ6O-h3M">
@@ -55,7 +56,7 @@
       "description": "French student learning artificial intelligence to become an AI Engineer. He builds open-source machine learning projects with PyTorch, TensorFlow and SpaCy.",
       "nationality": { "@type": "Country", "name": "France" },
       "knowsLanguage": ["fr", "en"],
-      "knowsAbout": ["Artificial intelligence", "Machine Learning", "Deep Learning", "NLP", "PyTorch", "TensorFlow", "SpaCy", "Python", "Java", "JavaScript", "Rust"],
+      "knowsAbout": ["Artificial intelligence", "Machine Learning", "Deep Learning", "NLP", "RAG", "Regression", "Text classification", "PyTorch", "TensorFlow", "SpaCy", "Python", "Java", "JavaScript", "Rust"],
       "sameAs": [
         "https://github.com/Lucachinou",
         "https://www.youtube.com/@lucachinou",
@@ -75,14 +76,62 @@
       "@id": "https://lucachinou.github.io/#profile",
       "url": "https://lucachinou.github.io/",
       "isPartOf": { "@id": "https://lucachinou.github.io/#website" },
-      "mainEntity": { "@id": "https://lucachinou.github.io/#person" }
+      "mainEntity": { "@id": "https://lucachinou.github.io/#person" },
+      "hasPart": { "@id": "https://lucachinou.github.io/#projects" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://lucachinou.github.io/#projects",
+      "name": "Lucachinou's projects",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@id": "https://github.com/Lucachinou/Assistant" } },
+        { "@type": "ListItem", "position": 2, "item": { "@id": "https://github.com/Lucachinou/House-pricing-regression" } },
+        { "@type": "ListItem", "position": 3, "item": { "@id": "https://github.com/Lucachinou/Spam-Classifier" } },
+        { "@type": "ListItem", "position": 4, "item": { "@id": "https://github.com/Lucachinou/Singlecraft" } }
+      ]
     },
     {
       "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/Lucachinou/Assistant",
+      "name": "Assistant",
+      "description": "Source code of the AI assistant integrated into Lucachinou's portfolio, based on RAG (Retrieval-Augmented Generation).",
+      "codeRepository": "https://github.com/Lucachinou/Assistant",
+      "programmingLanguage": "Python",
+      "keywords": "Python, RAG, Machine Learning, AI assistant",
+      "creativeWorkStatus": "Beta",
+      "author": { "@id": "https://lucachinou.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/Lucachinou/House-pricing-regression",
+      "name": "House Pricing Regression",
+      "description": "Educational regression model built with PyTorch that predicts house prices using only their size.",
+      "codeRepository": "https://github.com/Lucachinou/House-pricing-regression",
+      "programmingLanguage": "Python",
+      "keywords": "Python, PyTorch, Machine Learning, Linear regression",
+      "creativeWorkStatus": "Release",
+      "author": { "@id": "https://lucachinou.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/Lucachinou/Spam-Classifier",
+      "name": "Spam Classifier",
+      "description": "PyTorch classification model that detects scam and spam messages, especially on Discord.",
+      "codeRepository": "https://github.com/Lucachinou/Spam-Classifier",
+      "programmingLanguage": "Python",
+      "keywords": "Python, PyTorch, Machine Learning, NLP, Text classification, Discord, Spam detection",
+      "creativeWorkStatus": "Release",
+      "author": { "@id": "https://lucachinou.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/Lucachinou/Singlecraft",
       "name": "Singlecraft",
       "description": "Open-source web dashboard for managing Minecraft servers: start, stop, restart and view live logs.",
       "codeRepository": "https://github.com/Lucachinou/Singlecraft",
       "programmingLanguage": "Python",
+      "keywords": "Python, Web, Minecraft, Server management",
+      "creativeWorkStatus": "Beta",
       "author": { "@id": "https://lucachinou.github.io/#person" }
     },
     {
@@ -94,7 +143,7 @@
           "name": "Who is Lucachinou?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lucachinou is the username of Luca, a French student of 17 y/o learning artificial intelligence to become an AI Engineer. He works on machine learning with PyTorch, TensorFlow and SpaCy, and publishes his projects as open source on GitHub."
+            "text": "Lucachinou is the username of Luca, a 17-year-old French student learning artificial intelligence to become an AI Engineer. He works on machine learning with PyTorch, TensorFlow and SpaCy, and publishes his projects as open source on GitHub."
           }
         },
         {
@@ -102,7 +151,7 @@
           "name": "What projects has Lucachinou built?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "His currently has no main project. His side projects is Singlecraft, a Python web dashboard for managing Minecraft servers, published on GitHub under the Lucachinou account."
+            "text": "His projects are: Assistant, a Python RAG-based AI assistant integrated into his portfolio (beta); House Pricing Regression, an educational PyTorch model predicting house prices from size; Spam Classifier, a PyTorch model detecting scam messages, especially on Discord; and Singlecraft, a Python web dashboard for managing Minecraft servers (beta). All are published on GitHub under the Lucachinou account."
           }
         },
         {
@@ -110,7 +159,7 @@
           "name": "Which programming languages does Lucachinou use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Python (His main language) for machine learning, AI and automation; Java for Minecraft plugins and mods; JavaScript for Discord bots and web interfaces; and Rust for system tools."
+            "text": "Python (his main language) for machine learning, AI and automation; Java for Minecraft plugins and mods; JavaScript for Discord bots and web interfaces; and Rust for system tools."
           }
         }
       ]
@@ -217,7 +266,7 @@
         <span class="skill-icon"><img src="assets/images/Python.png" alt="" width="24" height="24" draggable="false"></span>
         <h3>Python</h3>
       </div>
-      <p>Machine learning, automation, AI</p>
+      <p>Machine learning, automation, Deep Learning, Sentiment Analysis</p>
       <div class="tags"><span>PyTorch</span><span>TensorFlow</span><span>SpaCy</span></div>
     </article>
     <article class="project skill-card reveal">
