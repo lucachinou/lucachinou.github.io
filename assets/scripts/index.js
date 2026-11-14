@@ -108,12 +108,12 @@
 
     document.title = lang === "en"
       ? englishTitle
-      : "Lucachinou — Étudiant en IA & Machine Learning";
+      : "Lucachinou";
 
     if (description) {
       description.content = lang === "en"
         ? englishDescription
-        : "Lucachinou — Étudiant en IA qui crée des projets open source de machine learning avec PyTorch : assistant RAG, détecteur de spam, régression de prix immobiliers et Singlecraft.";
+        : "Lucachinou — Étudiant en IA qui crée des projets de machine learning avec PyTorch : assistant RAG, détecteur de spam, régression de prix immobiliers et Singlecraft.";
     }
 
     try {
