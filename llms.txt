@@ -1,7 +1,9 @@
 # Lucachinou (Luca)
 
 > 17-year-old French student learning AI to become an AI Engineer.
-> Builds open-source projects: Machine Learning (PyTorch, TensorFlow, SpaCy), server administration tools and bots.
+> Builds open-source Machine Learning projects with PyTorch: a RAG-based AI assistant,
+> a Discord spam classifier, a house price regression model, and the Singlecraft
+> Minecraft server dashboard.
 > Main languages: Python, Rust and Java.
 
 ## Profile
@@ -10,27 +12,33 @@
 - **Age**: 17 (born in 2009)
 - **Nationality**: French
 - **Role**: studying AI to become an AI Engineer, open-source contributor
-- **Focus**: AI Engineering, Machine Learning, Deep Learning, NLP
+- **Focus**: AI Engineering, Machine Learning, Deep Learning, NLP, RAG, regression,
+  text classification
 - **Languages spoken**: French, English
 - **Website**: https://lucachinou.github.io/ (available in English and French)
 
 ## Skills
 
-- **Python** (main language): Machine Learning (PyTorch, TensorFlow, SpaCy), automation, AI, bots
+- **Python** (main language): Machine Learning, Deep Learning, Sentiment Analysis,
+  automation (PyTorch, TensorFlow, SpaCy)
 - **Java**: plugins and mods for Minecraft, back-end
 - **JavaScript**: Discord bots (Node.js) and lightweight web interfaces
 - **Rust**: system tools and performance
 
 ## Projects
 
-Luca currently has no single main project; his public projects are:
-
-- [Assistant](https://github.com/Lucachinou/Assistant) (Beta): source code of the AI
-  assistant available on his portfolio. Built in Python with RAG (Retrieval-Augmented
-  Generation) and Machine Learning.
-- [Singlecraft](https://github.com/Lucachinou/Singlecraft) (Beta): open-source web
-  dashboard in Python for managing Minecraft servers: start, stop, restart and view
-  live logs. Designed to be easy to use.
+1. [Assistant](https://github.com/Lucachinou/RAG-Assistant) (Beta): source code of the
+   AI assistant integrated into his portfolio, based on RAG (Retrieval-Augmented
+   Generation). Tech: Python, RAG, Machine Learning.
+2. [House Pricing Regression](https://github.com/Lucachinou/House-pricing-regression)
+   (Release): educational regression model built with PyTorch that predicts house
+   prices using only their size. Tech: Python, PyTorch, Machine Learning.
+3. [Spam Classifier](https://github.com/Lucachinou/Spam-Classifier) (Release):
+   PyTorch classification model that detects scam and spam messages, especially on
+   Discord. Tech: Python, PyTorch, Machine Learning, NLP.
+4. [Singlecraft](https://github.com/Lucachinou/Singlecraft) (Beta): open-source web
+   dashboard for managing Minecraft servers: start, stop, restart and view live logs.
+   Tech: Python, Web, Minecraft.
 
 ## Portfolio website
 
@@ -45,8 +53,10 @@ Luca currently has no single main project; his public projects are:
 - **Who is Lucachinou?** Luca, a 17-year-old French student learning AI to become an
   AI Engineer. He works on machine learning with PyTorch, TensorFlow and SpaCy and
   publishes his projects as open source on GitHub.
-- **What is he working on?** The Assistant (RAG-based AI assistant for his portfolio)
-  and Singlecraft (Minecraft server dashboard).
+- **What projects has he built?** Assistant (RAG-based AI assistant for his portfolio,
+  beta), House Pricing Regression (educational PyTorch model), Spam Classifier
+  (PyTorch scam detector for Discord messages) and Singlecraft (Minecraft server
+  dashboard, beta).
 - **Which languages does he use?** Python for ML/AI and automation, Java for Minecraft
   plugins and mods, JavaScript for Discord bots and web interfaces, Rust for system tools.
 
