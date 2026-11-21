@@ -16,23 +16,10 @@
     ["Faire défiler jusqu’aux projets", "Scroll to projects"],
     ["Faire défiler", "Scroll down"],
     ["Mes projets", "My projects"],
-    ["Etudiant pour devenir ingénieur IA.", "Student to become AI Engineer."],
     ["Bêta", "Beta"],
     [
       "Un tableau de bord web pour gérer des serveurs Minecraft : démarrage, arrêt, redémarrage et consultation des logs en direct.",
       "A web dashboard for managing Minecraft servers: start, stop, restart and view live logs."
-    ],
-    [
-      "Le code source de l’assistant IA actuellement présent sur mon portfolio.",
-      "The source code of the AI assistant currently on my portfolio."
-    ],
-    [
-      "Un modèle de régression qui prédit le prix des maisons uniquement à partir de leur surface. (À but éducatif)",
-      "A regression model to predict pricing of houses only using size. (Educational purpose)"
-    ],
-    [
-      "Un modèle de classification pour détecter les messages d’arnaque. (Surtout sur Discord)",
-      "A classifier model to detect scam messages. (Especially from Discord)"
     ],
     ["Explorer sur GitHub", "Explore on GitHub"],
     [
@@ -108,12 +95,12 @@
 
     document.title = lang === "en"
       ? englishTitle
-      : "Lucachinou";
+      : "Lucachinou — Étudiant en IA & Machine Learning";
 
     if (description) {
       description.content = lang === "en"
         ? englishDescription
-        : "Lucachinou — Étudiant en IA qui crée des projets de machine learning avec PyTorch : assistant RAG, détecteur de spam, régression de prix immobiliers et Singlecraft.";
+        : "Lucachinou — J’étudie l’IA pour devenir ingénieur IA. Machine learning, projets open source et outils.";
     }
 
     try {
@@ -254,7 +241,10 @@
 
 (() => {
   // Passe à true quand le backend est prêt
-  const AI_ENABLED = false;
+  const AI_ENABLED = true;
+  // TODO: remplacer par l'URL HTTPS une fois le serveur configuré
+  const API_URL = "http://82.65.203.208/api/models/chat";
+  const REQUEST_TIMEOUT = 60000;
 
   const launcher = document.getElementById("aiLauncher");
   const dialog = document.getElementById("aiDialog");
@@ -275,7 +265,9 @@
       stack: "What's your stack?",
       soon: "Soon",
       soonLabel: "Assistant (coming soon)",
-      soonMessage: "The assistant is coming soon."
+      soonMessage: "The assistant is coming soon.",
+      thinking: "Thinking…",
+      error: "Sorry, the assistant is unavailable right now. Please try again later."
     },
     fr: {
       open: "Poser une question",
@@ -287,7 +279,9 @@
       stack: "Tu codes avec quoi ?",
       soon: "Bientôt",
       soonLabel: "Assistant (bientôt)",
-      soonMessage: "L’assistant arrive bientôt."
+      soonMessage: "L’assistant arrive bientôt.",
+      thinking: "Réflexion…",
+      error: "Désolé, l’assistant est indisponible pour le moment. Réessaie plus tard."
     }
   };
 
@@ -358,12 +352,72 @@
     return message;
   }
 
-  // TODO: connect to the API, then display the reply with appendMessage(reply, false)
-  async function sendToAssistant(question) {}
+  // Conversation history sent to the API: [{ role: "user" | "assistant", content }]
+  const history = [];
+  let pending = false;
+  const sendButton = document.getElementById("aiSend");
+
+  function setBusy(busy) {
+    pending = busy;
+    sendButton.disabled = busy;
+    feed.setAttribute("aria-busy", String(busy));
+  }
+
+  // Accepts the most common response formats
+  function extractReply(data) {
+    if (typeof data === "string") return data;
+    return data?.response
+      ?? data?.reply
+      ?? data?.content
+      ?? data?.message?.content
+      ?? data?.message
+      ?? data?.choices?.[0]?.message?.content
+      ?? "";
+  }
+
+  async function sendToAssistant(question) {
+    history.push({ role: "user", content: question });
+    setBusy(true);
+
+    const reply = appendMessage(copy[language()].thinking, false);
+    reply.classList.add("ai-message--pending");
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ history }),
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const isJson = (response.headers.get("content-type") || "").includes("application/json");
+      const data = isJson ? await response.json() : await response.text();
+      const text = String(extractReply(data)).trim();
+      if (!text) throw new Error("Empty reply");
+
+      reply.textContent = text;
+      history.push({ role: "assistant", content: text });
+    } catch (error) {
+      console.error("Assistant error:", error);
+      // Drop the unanswered question so roles keep alternating user/assistant
+      history.pop();
+      reply.textContent = copy[language()].error;
+      reply.classList.add("ai-message--error");
+    } finally {
+      clearTimeout(timer);
+      reply.classList.remove("ai-message--pending");
+      feed.scrollTop = feed.scrollHeight;
+      setBusy(false);
+    }
+  }
 
   function submitQuestion(question) {
     const text = question.trim();
-    if (!text) return;
+    if (!text || pending) return;
     appendMessage(text, true);
     suggestions.hidden = true;
     suggestions.style.display = "none";
